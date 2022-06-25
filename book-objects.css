@@ -8,3 +8,9 @@ h2 {
 body {
     background: tan;
 }
+.container {
+    display: grid;
+    border: 5px solid black;
+    width: 84vw;
+    height: 55vh;
+}
