@@ -27,6 +27,21 @@ console.log(theHobbit.constructor);
 function addBookToLibrary() {
     new Book
 }
+function createBookDiv() {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode("BookNumber1"))
+    return div
+};
+
+document.querySelector("button").addEventListener("click", () => {
+    console.log("click-test-achieved")
+    const container = document.querySelector(".container");
+    
+    container.appendChild(createBookDiv("div"));
+});
+
+
+
 /*
 function myFunction(list){
     var text = "";
