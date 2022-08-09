@@ -9,8 +9,30 @@ const player1 = new Player ('steve', 'X')
 const player2 = new Player ('also steve', 'O')
 player1.sayName() // logs 'steve'
 player2.sayName() // logs 'also steve'
+console.log('end of tests for this page from here on out.');
+
 //////////////////////////////////////////////////////////////////
+
+
+
 let myLibrary = ["The Hobbit", "Harry Potter", "20 000 lieues"];
+
+
+
+myLibrary.forEach(element => {
+    console.log(element);
+    const container = document.querySelector(".container");
+    
+
+    function createBookDiv (div) {
+        div = document.createElement("div");
+        div.appendChild(document.createTextNode(element))
+        return div
+    }
+    container.appendChild(createBookDiv("div")); 
+    
+});
+
 function Book (title, author, pages, read) {
     this.title = title + ""
     this.author = author
@@ -25,22 +47,33 @@ console.log(theHobbit.sayInfo());
 console.log(theHobbit.constructor);
 /////
 function addBookToLibrary() {
-    new Book
-}
-function createBookDiv() {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode("BookNumber1"))
-    return div
-};
+    new Book (title, author, pages, read);
+
+// (function createBookDiv() {
+//     let div = document.createElement("div");
+//     div.appendChild(document.createTextNode("BookNumber1"))
+//     return div
+// }) ();
+// };
+// function createBookForm() {
+//     let div = document.createElement("div");
+//     div.appendChild(document.createElement("form"))
+//     return div
+ };
 
 document.querySelector("button").addEventListener("click", () => {
     console.log("click-test-achieved")
     const container = document.querySelector(".container");
     
-    container.appendChild(createBookDiv("div"));
+    container.appendChild(createBookDiv("div"));    
 });
 
-
+// document.querySelector("button").addEventListener("click", () => {
+//     console.log("click-test-achieved")
+//     const container = document.querySelector(".container");
+    
+//     container.appendChild(createBookForm("div"));    
+// });
 
 /*
 function myFunction(list){
