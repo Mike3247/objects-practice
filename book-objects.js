@@ -47,27 +47,25 @@ console.log(theHobbit.sayInfo());
 console.log(theHobbit.constructor);
 /////
 function addBookToLibrary() {
-    new Book (title, author, pages, read);
-
-// (function createBookDiv() {
-//     let div = document.createElement("div");
-//     div.appendChild(document.createTextNode("BookNumber1"))
-//     return div
-// }) ();
-// };
-// function createBookForm() {
-//     let div = document.createElement("div");
-//     div.appendChild(document.createElement("form"))
-//     return div
+    let input = prompt("What book have you read?");
+    alert(`You read ${input}`);
+    myLibrary = myLibrary + ` ${input} `;
  };
 
-document.querySelector("button").addEventListener("click", () => {
-    console.log("click-test-achieved")
-    const container = document.querySelector(".container");
-    
-    container.appendChild(createBookDiv("div"));    
-});
+ addBookToLibrary();
 
+ 
+
+console.log(myLibrary);
+
+
+
+// document.querySelector("button").addEventListener("click", () => {
+//     console.log("click-test-achieved")
+//     const container = document.querySelector(".container");
+    
+//     container.appendChild(createBookDiv("div"));    
+// });
 // document.querySelector("button").addEventListener("click", () => {
 //     console.log("click-test-achieved")
 //     const container = document.querySelector(".container");
