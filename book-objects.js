@@ -15,22 +15,17 @@ console.log('end of tests for this page from here on out.');
 
 
 
-let myLibrary = ["The Hobbit", "Harry Potter", "20 000 lieues"];
-
-
+let myLibrary = [/*"The Hobbit", "Harry Potter", "20 000 lieues"*/];
 
 myLibrary.forEach(element => {
     console.log(element);
     const container = document.querySelector(".container");
-    
-
     function createBookDiv (div) {
         div = document.createElement("div");
         div.appendChild(document.createTextNode(element))
         return div
     }
     container.appendChild(createBookDiv("div")); 
-    
 });
 
 function Book (title, author, pages, read) {
@@ -45,18 +40,25 @@ function Book (title, author, pages, read) {
 const theHobbit = new Book ("The Hobbit ", "J.R.R. Tolkien ", "295 pages ", "not read yet ")
 console.log(theHobbit.sayInfo());
 console.log(theHobbit.constructor);
-/////
+
+
 function addBookToLibrary() {
     let input = prompt("What book have you read?");
     alert(`You read ${input}`);
-    myLibrary = myLibrary + ` ${input} `;
+    myLibrary.push(`${input}`);
  };
-
- addBookToLibrary();
-
- 
-
+addBookToLibrary();
 console.log(myLibrary);
+myLibrary.forEach(element => {
+    console.log(element);
+    const container = document.querySelector(".container");
+    function createBookDiv (div) {
+        div = document.createElement("div");
+        div.appendChild(document.createTextNode(element))
+        return div
+    }
+    container.appendChild(createBookDiv("div")); 
+});
 
 
 
