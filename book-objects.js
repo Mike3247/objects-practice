@@ -41,13 +41,19 @@ const theHobbit = new Book ("The Hobbit ", "J.R.R. Tolkien ", "295 pages ", "not
 console.log(theHobbit.sayInfo());
 console.log(theHobbit.constructor);
 
+document.querySelector("button").addEventListener("click", () => {
+    console.log("click-test-achieved")
 
 function addBookToLibrary() {
+    
     let input = prompt("What book have you read?");
     alert(`You read ${input}`);
     myLibrary.push(`${input}`);
+    return{
+        myLibrary : myLibrary
+    }
  };
-addBookToLibrary();
+addBookToLibrary(); 
 console.log(myLibrary);
 myLibrary.forEach(element => {
     console.log(element);
@@ -59,6 +65,10 @@ myLibrary.forEach(element => {
     }
     container.appendChild(createBookDiv("div")); 
 });
+
+});
+
+
 
 
 
