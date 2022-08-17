@@ -41,30 +41,40 @@ const theHobbit = new Book ("The Hobbit ", "J.R.R. Tolkien ", "295 pages ", "not
 console.log(theHobbit.sayInfo());
 console.log(theHobbit.constructor);
 
+
 document.querySelector("button").addEventListener("click", () => {
     console.log("click-test-achieved")
-
-function addBookToLibrary() {
-    
-    let input = prompt("What book have you read?");
-    alert(`You read ${input}`);
-    myLibrary.push(`${input}`);
-    return{
-        myLibrary : myLibrary
-    }
- };
-addBookToLibrary(); 
-console.log(myLibrary);
-myLibrary.forEach(element => {
-    console.log(element);
     const container = document.querySelector(".container");
-    function createBookDiv (div) {
-        div = document.createElement("div");
-        div.appendChild(document.createTextNode(element))
-        return div
-    }
-    container.appendChild(createBookDiv("div")); 
-});
+    const btn = document.querySelector("button")
+
+    btn.addEventListener("click", function() {
+        while (container.childNodes.length > 1) {
+            container.removeChild(container.lastChild);
+    };
+    });
+    function addBookToLibrary() {
+        
+        let input = prompt("What book have you read?");
+        alert(`You read ${input}`);
+        myLibrary.push(`${input}`);
+        return{
+            myLibrary : myLibrary
+        }
+    };
+    addBookToLibrary(); 
+    console.log(myLibrary);
+    myLibrary.forEach(element => {
+        console.log(element);
+        const container = document.querySelector(".container");
+        
+        function createBookDiv (div) {
+        
+            div = document.createElement("div");
+            div.appendChild(document.createTextNode(element))
+            return div
+        }
+        container.appendChild(createBookDiv("div")); 
+    });
 
 });
 
