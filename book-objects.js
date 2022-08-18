@@ -40,18 +40,17 @@ function Book (title, author, pages, read) {
 const theHobbit = new Book ("The Hobbit ", "J.R.R. Tolkien ", "295 pages ", "not read yet ")
 console.log(theHobbit.sayInfo());
 console.log(theHobbit.constructor);
-
+const container = document.querySelector(".container");
+const buttonDiv = document.querySelector(".newBookButton");
+const btn = document.querySelector("button")
+btn.addEventListener("click", () => {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+};
+});
 
 document.querySelector("button").addEventListener("click", () => {
     console.log("click-test-achieved")
-    const container = document.querySelector(".container");
-    const btn = document.querySelector("button")
-
-    btn.addEventListener("click", function() {
-        while (container.childNodes.length > 1) {
-            container.removeChild(container.lastChild);
-    };
-    });
     function addBookToLibrary() {
         
         let input = prompt("What book have you read?");
