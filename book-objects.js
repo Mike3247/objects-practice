@@ -59,8 +59,9 @@ function closeForm() {
 
 document.getElementById("newBookButton").addEventListener("click", () => {
     console.log("click-test-achieved")
+    openForm();
     function addBookToLibrary() {
-        openForm();
+       
         
 
         let input = prompt("What book have you read?");
