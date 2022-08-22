@@ -49,10 +49,20 @@ btn.addEventListener("click", () => {
 };
 });
 
-document.querySelector("button").addEventListener("click", () => {
+function openForm() {
+    document.getElementById("newBookForm").style.display = "block";
+  };
+
+function closeForm() {
+    document.getElementById("newBookForm").style.display = "none";
+  }
+
+document.getElementById("newBookButton").addEventListener("click", () => {
     console.log("click-test-achieved")
     function addBookToLibrary() {
+        openForm();
         
+
         let input = prompt("What book have you read?");
         alert(`You read ${input}`);
         myLibrary.push(`${input}`);
@@ -60,6 +70,7 @@ document.querySelector("button").addEventListener("click", () => {
             myLibrary : myLibrary
         }
     };
+
     addBookToLibrary(); 
     console.log(myLibrary);
     myLibrary.forEach(element => {
@@ -75,6 +86,11 @@ document.querySelector("button").addEventListener("click", () => {
         container.appendChild(createBookDiv("div")); 
     });
 
+});
+
+document.getElementById("closeFormButton").addEventListener("click", () => {
+    console.log("click-test-achieved")
+    closeForm();
 });
 
 
