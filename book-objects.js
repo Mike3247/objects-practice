@@ -50,7 +50,7 @@ btn.addEventListener("click", () => {
 });
 
 function openForm() {
-    document.getElementById("newBookForm").style.display = "block";
+    document.getElementById("newBookFormDiv").style.display = "block";
   };
 
 function closeForm() {

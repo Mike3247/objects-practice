@@ -14,3 +14,7 @@ body {
     width: 84vw;
     height: 55vh;
 }
+
+.newBookFormDiv {
+    display: none;
+}
