@@ -60,34 +60,47 @@ function closeForm() {
 document.getElementById("newBookButton").addEventListener("click", () => {
     console.log("click-test-achieved")
     openForm();
-    function addBookToLibrary() {
-       
+    function getAuthorName() {
+    let authorName = document.getElementById("author").value;
+    alert(authorName);
+    return {
+        authorName : authorName
+    }
+    };  
+    document.getElementById("closeFormButton").addEventListener("click", () => {
+        console.log("click-test-achieved")
         
-
-        let input = prompt("What book have you read?");
-        alert(`You read ${input}`);
-        myLibrary.push(`${input}`);
-        return{
-            myLibrary : myLibrary
-        }
-    };
-
-    addBookToLibrary(); 
-    console.log(myLibrary);
-    myLibrary.forEach(element => {
-        console.log(element);
-        const container = document.querySelector(".container");
-        
-        function createBookDiv (div) {
-        
-            div = document.createElement("div");
-            div.appendChild(document.createTextNode(element))
-            return div
-        }
-        container.appendChild(createBookDiv("div")); 
+        function addBookToLibrary() {
+           
+            
+    
+    
+            let input = getAuthorName();
+            alert(`You read ${input}`);
+            myLibrary.push(`${input}`);
+            return{
+                myLibrary : myLibrary
+            }
+        };
+    
+        addBookToLibrary(); 
+        console.log(myLibrary);
+        myLibrary.forEach(element => {
+            console.log(element);
+            const container = document.querySelector(".container");
+            
+            function createBookDiv (div) {
+            
+                div = document.createElement("div");
+                div.appendChild(document.createTextNode(element))
+                return div
+            }
+            container.appendChild(createBookDiv("div")); 
+        });
+    
     });
-
 });
+
 
 document.getElementById("closeFormButton").addEventListener("click", () => {
     console.log("click-test-achieved")
