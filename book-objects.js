@@ -60,29 +60,19 @@ function closeForm() {
 document.getElementById("newBookButton").addEventListener("click", () => {
     console.log("click-test-achieved")
     openForm();
-    function getAuthorName() {
-    let authorName = document.getElementById("author").value;
-    alert(authorName);
-    return {
-        authorName : authorName
-    }
-    };  
+  
     document.getElementById("closeFormButton").addEventListener("click", () => {
         console.log("click-test-achieved")
-        
-        function addBookToLibrary() {
-           
-            
-    
-    
-            let input = getAuthorName();
+        let authorName = document.getElementById("author").value;
+        alert(authorName);
+        function addBookToLibrary() { 
+            let input = authorName;
             alert(`You read ${input}`);
             myLibrary.push(`${input}`);
             return{
                 myLibrary : myLibrary
             }
         };
-    
         addBookToLibrary(); 
         console.log(myLibrary);
         myLibrary.forEach(element => {
@@ -102,10 +92,10 @@ document.getElementById("newBookButton").addEventListener("click", () => {
 });
 
 
-document.getElementById("closeFormButton").addEventListener("click", () => {
-    console.log("click-test-achieved")
-    closeForm();
-});
+// document.getElementById("closeFormButton").addEventListener("click", () => {
+//     console.log("click-test-achieved")
+//     closeForm();
+// });
 
 
 
