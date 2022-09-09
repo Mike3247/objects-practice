@@ -40,10 +40,10 @@ function closeForm() {
 document.getElementById("newBookButton").addEventListener("click", () => {
     openForm();
     console.log("click-test-achieved")
-    const container = document.querySelector(".container");
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    };
+    // const container = document.querySelector(".container");
+    // while (container.firstChild) {
+    //     container.removeChild(container.firstChild);
+    // };
 });
 function addBookToLibrary() { 
     let authorName = document.getElementById("author").value;
@@ -65,6 +65,10 @@ function addBookToLibrary() {
 };  
 document.getElementById("closeFormButton").addEventListener("click", () => {
     console.log("click-test-achieved")
+    const container = document.querySelector(".container");
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    };
     addBookToLibrary(); 
     closeForm();
 });
