@@ -46,17 +46,28 @@ document.getElementById("newBookButton").addEventListener("click", () => {
     // };
 });
 function addBookToLibrary() { 
+    let title = document.getElementById("title").value;
+    alert(title);
     let authorName = document.getElementById("author").value;
     alert(authorName);
-    let input = authorName;
-    alert(`You read ${input}`);
-    myLibrary.push(`${input}`);
+    let pages = document.getElementById("pages").value;
+    alert(pages);
+    let readStatus = document.getElementById("readStatus").value;
+    alert(readStatus);
+    const additionalBook = new Book (title, authorName, pages, readStatus);
+    // let input = additionalBook;
+    alert(`You read ${additionalBook.title}`);
+    myLibrary.push(`${additionalBook.title}`);
+    myLibrary.push(`${additionalBook.authorName}`);
+    myLibrary.push(`${additionalBook.pages}`);
+    myLibrary.push(`${additionalBook.readStatus}`);
     console.log(myLibrary);
     myLibrary.forEach(element => {
         console.log(element);
         const container = document.querySelector(".container");
         function createBookDiv (div) {
             div = document.createElement("div");
+            div.style.border = "solid 10px red"
             div.appendChild(document.createTextNode(element))
             return div
         }
