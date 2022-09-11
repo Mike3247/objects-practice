@@ -17,7 +17,7 @@ console.log('end of tests for this page from here on out.');
 
 let myLibrary = [/*"The Hobbit", "Harry Potter", "20 000 lieues"*/];
 function Book (title, author, pages, read) {
-    this.title = title + ""
+    this.title = title.substr(0) + " "
     this.author = author
     this.pages = pages
     this.read = read
@@ -54,13 +54,13 @@ function addBookToLibrary() {
     alert(pages);
     let readStatus = document.getElementById("readStatus").value;
     alert(readStatus);
-    const additionalBook = new Book (title, authorName, pages, readStatus);
-    // let input = additionalBook;
-    alert(`You read ${additionalBook.title}`);
-    myLibrary.push(`${additionalBook.title}`);
-    myLibrary.push(`${additionalBook.authorName}`);
-    myLibrary.push(`${additionalBook.pages}`);
-    myLibrary.push(`${additionalBook.readStatus}`);
+    const additionalBook = new Book (title.substr(0) + " ", authorName.substr(0) + " ", pages.substr(0) + " ", readStatus);
+    console.log(additionalBook.sayInfo());
+    alert(additionalBook.title);
+    myLibrary.push(additionalBook.title);
+    myLibrary.push(additionalBook.authorName);
+    myLibrary.push(additionalBook.pages);
+    myLibrary.push(additionalBook.readStatus);
     console.log(myLibrary);
     myLibrary.forEach(element => {
         console.log(element);
