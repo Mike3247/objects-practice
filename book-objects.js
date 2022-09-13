@@ -48,27 +48,28 @@ document.getElementById("newBookButton").addEventListener("click", () => {
 function addBookToLibrary() { 
     let title = document.getElementById("title").value;
     alert(title);
-    let authorName = document.getElementById("author").value;
-    alert(authorName);
+    let author = document.getElementById("author").value;
+    alert(author);
     let pages = document.getElementById("pages").value;
     alert(pages);
-    let readStatus = document.getElementById("readStatus").value;
-    alert(readStatus);
-    const additionalBook = new Book (title.substr(0) + " ", authorName.substr(0) + " ", pages.substr(0) + " ", readStatus);
+    let read = document.getElementById("readStatus").value;
+    alert(read);
+    const additionalBook = new Book (title.substr(0) + " ", author.substr(0) + " ", pages.substr(0) + " ", read);
     console.log(additionalBook.sayInfo());
     alert(additionalBook.title);
     myLibrary.push(additionalBook.title);
-    myLibrary.push(additionalBook.authorName);
+    myLibrary.push(additionalBook.author);
     myLibrary.push(additionalBook.pages);
-    myLibrary.push(additionalBook.readStatus);
+    myLibrary.push(additionalBook.read);
     console.log(myLibrary);
     myLibrary.forEach(element => {
         console.log(element);
         const container = document.querySelector(".container");
         function createBookDiv (div) {
             div = document.createElement("div");
-            div.style.border = "solid 10px red"
+            
             div.appendChild(document.createTextNode(element))
+            div.style.border = "solid 10px red";
             return div
         }
         container.appendChild(createBookDiv("div")); 
