@@ -13,8 +13,6 @@ console.log('end of tests for this page from here on out.');
 
 //////////////////////////////////////////////////////////////////
 
-
-
 let myLibrary = [/*"The Hobbit", "Harry Potter", "20 000 lieues"*/];
 function Book (title, author, pages, read) {
     this.title = title.substr(0) + " "
@@ -40,10 +38,6 @@ function closeForm() {
 document.getElementById("newBookButton").addEventListener("click", () => {
     openForm();
     console.log("click-test-achieved")
-    // const container = document.querySelector(".container");
-    // while (container.firstChild) {
-    //     container.removeChild(container.firstChild);
-    // };
 });
 function addBookToLibrary() { 
     let title = document.getElementById("title").value;
@@ -57,17 +51,13 @@ function addBookToLibrary() {
     const additionalBook = new Book (title.substr(0) + " ", author.substr(0) + " ", pages.substr(0) + " ", read);
     console.log(additionalBook.sayInfo());
     alert(additionalBook.title);
-    myLibrary.push(additionalBook.title);
-    myLibrary.push(additionalBook.author);
-    myLibrary.push(additionalBook.pages);
-    myLibrary.push(additionalBook.read);
+    myLibrary.push(additionalBook.sayInfo());
     console.log(myLibrary);
     myLibrary.forEach(element => {
         console.log(element);
         const container = document.querySelector(".container");
         function createBookDiv (div) {
             div = document.createElement("div");
-            
             div.appendChild(document.createTextNode(element))
             div.style.border = "solid 10px red";
             return div
