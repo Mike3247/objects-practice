@@ -60,11 +60,13 @@ function addBookToLibrary() {
             div = document.createElement("div");
             div.appendChild(document.createTextNode(element))
             div.style.border = "solid 10px red";
+            div.dataset.indexNumber = myLibrary.indexOf(additionalBook);
             const buttonToRemoveBook = document.createElement("button");
             buttonToRemoveBook.textContent = "Remove Book";
             div.appendChild(buttonToRemoveBook);
             return div
         }
+        console.log(myLibrary.indexOf(element));
         container.appendChild(createBookDiv("div")); 
     });
 };  
