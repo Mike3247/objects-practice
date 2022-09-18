@@ -64,6 +64,11 @@ function addBookToLibrary() {
             const buttonToRemoveBook = document.createElement("button");
             buttonToRemoveBook.textContent = "Remove Book";
             div.appendChild(buttonToRemoveBook);
+            buttonToRemoveBook.addEventListener("click", () => {
+                console.log("remove-button-click-test-achieved")
+                // const container = document.querySelector(".container");
+                // container.div.removeChild(myLibrary.indexOf(additionalBook));
+            })
             return div
         }
         console.log(myLibrary.indexOf(element));
