@@ -66,8 +66,7 @@ function addBookToLibrary() {
             div.appendChild(buttonToRemoveBook);
             buttonToRemoveBook.addEventListener("click", () => {
                 console.log("remove-button-click-test-achieved")
-                // const container = document.querySelector(".container");
-                // container.div.removeChild(myLibrary.indexOf(additionalBook));
+                container.removeChild(div);
             })
             return div
         }
@@ -84,3 +83,4 @@ document.getElementById("closeFormButton").addEventListener("click", () => {
     addBookToLibrary(); 
     closeForm();
 });
+
