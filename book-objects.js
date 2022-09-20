@@ -20,7 +20,8 @@ function Book (title, author, pages, read) {
     this.pages = pages
     this.read = read
     this.sayInfo = function () {
-        return title + author + pages + read
+        return "Title: " + title + "Author: " + author +
+         "Number of pages: " + pages + "Read status: " + read
     }
 }
 const theHobbit = new Book ("The Hobbit ", "J.R.R. Tolkien ", "295 pages ", "not read yet ")
