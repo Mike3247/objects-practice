@@ -42,16 +42,16 @@ document.getElementById("newBookButton").addEventListener("click", () => {
 });
 function addBookToLibrary() { 
     let title = document.getElementById("title").value;
-    alert(title);
+    // alert(title);
     let author = document.getElementById("author").value;
-    alert(author);
+    // alert(author);
     let pages = document.getElementById("pages").value;
-    alert(pages);
+    // alert(pages);
     let read = document.getElementById("readStatus").value;
-    alert(read);
+    // alert(read);
     const additionalBook = new Book (title.substr(0) + " ", author.substr(0) + " ", pages.substr(0) + " ", read);
     console.log(additionalBook.sayInfo());
-    alert(additionalBook.title);
+    // alert(additionalBook.title);
     myLibrary.push(additionalBook.sayInfo());
     console.log(myLibrary);
     myLibrary.forEach(element => {
@@ -62,6 +62,9 @@ function addBookToLibrary() {
             div.appendChild(document.createTextNode(element))
             div.style.border = "solid 10px red";
             div.dataset.indexNumber = myLibrary.indexOf(additionalBook);
+            const buttonToChangeReadStatus = document.createElement("button");
+            buttonToChangeReadStatus.textContent = "Change Read Status";
+            div.appendChild(buttonToChangeReadStatus);
             const buttonToRemoveBook = document.createElement("button");
             buttonToRemoveBook.textContent = "Remove Book";
             div.appendChild(buttonToRemoveBook);
