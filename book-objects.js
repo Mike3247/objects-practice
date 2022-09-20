@@ -67,6 +67,7 @@ function addBookToLibrary() {
             buttonToRemoveBook.addEventListener("click", () => {
                 console.log("remove-button-click-test-achieved")
                 container.removeChild(div);
+                myLibrary.splice(div.dataset.indexNumber, 1);
             })
             return div
         }
