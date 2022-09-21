@@ -47,7 +47,11 @@ function addBookToLibrary() {
     // alert(author);
     let pages = document.getElementById("pages").value;
     // alert(pages);
-    let read = document.getElementById("readStatus").value;
+    let read = document.getElementsByName("readStatus").value;
+        for (i = 0; i < read.length; i++) {
+            if (read[i].checked)
+            return read;
+        }
     // alert(read);
     const additionalBook = new Book (title.substr(0) + " ", author.substr(0) + " ", pages.substr(0) + " ", read);
     console.log(additionalBook.sayInfo());
@@ -62,9 +66,13 @@ function addBookToLibrary() {
             div.appendChild(document.createTextNode(element))
             div.style.border = "solid 10px red";
             div.dataset.indexNumber = myLibrary.indexOf(additionalBook);
-            const buttonToChangeReadStatus = document.createElement("button");
-            buttonToChangeReadStatus.textContent = "Change Read Status";
-            div.appendChild(buttonToChangeReadStatus);
+            // const readStatus = document.getElementById("readStatus").value;
+            const buttonToToggleReadStatus = document.createElement("button");
+            // if (readStatus = on) {
+            // buttonToToggleReadStatus.textContent = "Read";}
+            // else if (readStatus = "Not Read") {
+            // buttonToToggleReadStatus.textContent = "Not Read";}
+            div.appendChild(buttonToToggleReadStatus);
             const buttonToRemoveBook = document.createElement("button");
             buttonToRemoveBook.textContent = "Remove Book";
             div.appendChild(buttonToRemoveBook);
