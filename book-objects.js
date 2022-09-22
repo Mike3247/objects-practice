@@ -19,6 +19,10 @@ function Book (title, author, pages, read) {
     this.author = author
     this.pages = pages
     this.read = read
+    this.toggleRead = function () {
+        if (read === "Read") {read = "Not Read"}
+            else if (read === "Not Read") {read = "Read"}
+    }
     this.sayInfo = function () {
         return "Title: " + title + "Author: " + author +
          "Number of pages: " + pages + "Read status: " + read
@@ -62,8 +66,10 @@ function addBookToLibrary() {
             div.appendChild(document.createTextNode(element))
             div.style.border = "solid 10px red";
             div.dataset.indexNumber = myLibrary.indexOf(additionalBook);
-            // const readStatus = document.getElementById("readStatus").value;
             const buttonToToggleReadStatus = document.createElement("button");
+            buttonToToggleReadStatus.addEventListener("click", () => {
+                additionalBook.toggleRead();
+            });
             if (read === "Read") {
                 buttonToToggleReadStatus.textContent = "Read"}
                 else if (read === "Not Read") {
