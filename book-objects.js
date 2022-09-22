@@ -64,10 +64,10 @@ function addBookToLibrary() {
             div.dataset.indexNumber = myLibrary.indexOf(additionalBook);
             // const readStatus = document.getElementById("readStatus").value;
             const buttonToToggleReadStatus = document.createElement("button");
-            // if (readStatus = on) {
-            // buttonToToggleReadStatus.textContent = "Read";}
-            // else if (readStatus = "Not Read") {
-            // buttonToToggleReadStatus.textContent = "Not Read";}
+            if (read === "Read") {
+                buttonToToggleReadStatus.textContent = "Read"}
+                else if (read === "Not Read") {
+                buttonToToggleReadStatus.textContent = "Not Read"};
             div.appendChild(buttonToToggleReadStatus);
             const buttonToRemoveBook = document.createElement("button");
             buttonToRemoveBook.textContent = "Remove Book";
