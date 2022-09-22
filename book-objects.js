@@ -47,12 +47,8 @@ function addBookToLibrary() {
     // alert(author);
     let pages = document.getElementById("pages").value;
     // alert(pages);
-    let read = document.getElementsByName("readStatus").value;
-        for (i = 0; i < read.length; i++) {
-            if (read[i].checked)
-            return read;
-        }
-    // alert(read);
+    let read = document.querySelector('input[name="readStatus"]:checked').value;
+    alert(read);
     const additionalBook = new Book (title.substr(0) + " ", author.substr(0) + " ", pages.substr(0) + " ", read);
     console.log(additionalBook.sayInfo());
     // alert(additionalBook.title);
