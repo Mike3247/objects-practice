@@ -20,8 +20,12 @@ function Book (title, author, pages, read) {
     this.pages = pages
     this.read = read
     this.toggleRead = function () {
-        if (read === "Read") {read = "Not Read"}
-            else if (read === "Not Read") {read = "Read"}
+        if (read === "Read") {read = "Not Read";
+            return "Not Read"
+        }
+            else if (read === "Not Read") {read = "Read";
+                return "Read";
+        }
     }
     this.sayInfo = function () {
         return "Title: " + title + "Author: " + author +
@@ -44,6 +48,7 @@ document.getElementById("newBookButton").addEventListener("click", () => {
     openForm();
     console.log("click-test-achieved")
 });
+
 function addBookToLibrary() { 
     let title = document.getElementById("title").value;
     // alert(title);
@@ -55,6 +60,7 @@ function addBookToLibrary() {
     alert(read);
     const additionalBook = new Book (title.substr(0) + " ", author.substr(0) + " ", pages.substr(0) + " ", read);
     console.log(additionalBook.sayInfo());
+    // additionalBook.toggleRead();
     // alert(additionalBook.title);
     myLibrary.push(additionalBook.sayInfo());
     console.log(myLibrary);
@@ -68,13 +74,20 @@ function addBookToLibrary() {
             div.dataset.indexNumber = myLibrary.indexOf(additionalBook);
             const buttonToToggleReadStatus = document.createElement("button");
             buttonToToggleReadStatus.addEventListener("click", () => {
-                additionalBook.toggleRead();
+                buttonToToggleReadStatus.textContent = additionalBook.toggleRead();
             });
             if (read === "Read") {
-                buttonToToggleReadStatus.textContent = "Read"}
+                buttonToToggleReadStatus.textContent = "Read"
+            }
                 else if (read === "Not Read") {
-                buttonToToggleReadStatus.textContent = "Not Read"};
+                buttonToToggleReadStatus.textContent = "Not Read"
+            };
+                
             div.appendChild(buttonToToggleReadStatus);
+            
+            
+            
+
             const buttonToRemoveBook = document.createElement("button");
             buttonToRemoveBook.textContent = "Remove Book";
             div.appendChild(buttonToRemoveBook);
