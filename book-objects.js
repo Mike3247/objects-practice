@@ -29,7 +29,7 @@ function Book (title, author, pages, read) {
     }
     this.sayInfo = function () {
         return "Title: " + title + "Author: " + author +
-         "Number of pages: " + pages + "Read status: " + read
+         "Number of pages: " + pages + "Read status: "
     }
 }
 const theHobbit = new Book ("The Hobbit ", "J.R.R. Tolkien ", "295 pages ", "not read yet ")
@@ -48,20 +48,14 @@ document.getElementById("newBookButton").addEventListener("click", () => {
     openForm();
     console.log("click-test-achieved")
 });
-
 function addBookToLibrary() { 
     let title = document.getElementById("title").value;
-    // alert(title);
     let author = document.getElementById("author").value;
-    // alert(author);
     let pages = document.getElementById("pages").value;
-    // alert(pages);
     let read = document.querySelector('input[name="readStatus"]:checked').value;
     alert(read);
     const additionalBook = new Book (title.substr(0) + " ", author.substr(0) + " ", pages.substr(0) + " ", read);
     console.log(additionalBook.sayInfo());
-    // additionalBook.toggleRead();
-    // alert(additionalBook.title);
     myLibrary.push(additionalBook.sayInfo());
     console.log(myLibrary);
     myLibrary.forEach(element => {
@@ -69,7 +63,7 @@ function addBookToLibrary() {
         const container = document.querySelector(".container");
         function createBookDiv (div) {
             div = document.createElement("div");
-            div.appendChild(document.createTextNode(element))
+            div.appendChild(document.createTextNode(element)) 
             div.style.border = "solid 10px red";
             div.dataset.indexNumber = myLibrary.indexOf(additionalBook);
             const buttonToToggleReadStatus = document.createElement("button");
@@ -77,17 +71,12 @@ function addBookToLibrary() {
                 buttonToToggleReadStatus.textContent = additionalBook.toggleRead();
             });
             if (read === "Read") {
-                buttonToToggleReadStatus.textContent = "Read"
+                buttonToToggleReadStatus.textContent = "Read";
             }
                 else if (read === "Not Read") {
-                buttonToToggleReadStatus.textContent = "Not Read"
+                buttonToToggleReadStatus.textContent = "Not Read";
             };
-                
-            div.appendChild(buttonToToggleReadStatus);
-            
-            
-            
-
+            div.appendChild(buttonToToggleReadStatus);                 
             const buttonToRemoveBook = document.createElement("button");
             buttonToRemoveBook.textContent = "Remove Book";
             div.appendChild(buttonToRemoveBook);
@@ -101,7 +90,7 @@ function addBookToLibrary() {
         console.log(myLibrary.indexOf(element));
         container.appendChild(createBookDiv("div")); 
     });
-};  
+};
 document.getElementById("closeFormButton").addEventListener("click", () => {
     console.log("click-test-achieved")
     const container = document.querySelector(".container");
